@@ -59,7 +59,7 @@ out[-1].append(dx_x3)
 for row in out:
     print('  :  '.join([str(i) for i in row]))
 middle = sum(Y) / len(Y)
-M = []
+M = [] # Масив, у якому зберігаються усі Y, що відповідають варіанту завдання(->середнє Y : менше за середнє Y в даному випадку)
 for i in Y:
     if middle - i > 0:
         M.append(middle - i)
