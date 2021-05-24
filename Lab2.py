@@ -1,5 +1,6 @@
 import random as rand
 import math
+import time
 
 var = 15
 m = 5
@@ -64,9 +65,13 @@ Ruv.append(abs(theta[2] - 1) / sigmaTheta)
 
 Rkr = 2
 
+start_time = time.time()  # Початок відліку часу
+
 for i in range(len(Ruv)):
     if Ruv[i] > Rkr:
         print('Помилка, повторіть експеримент')
+        
+print("Execution time: %s seconds " % (time.time() - start_time))  # Кінець відліку часу
 
 mx1 = (x_n[0][0] + x_n[1][0] + x_n[2][0]) / 3
 mx2 = (x_n[0][1] + x_n[1][1] + x_n[2][1]) / 3
