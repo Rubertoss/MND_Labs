@@ -2,9 +2,12 @@ import random
 import numpy as np
 from numpy.linalg import solve
 from scipy.stats import f, t
-
-
-def lab4(m, n):
+import time
+count = []
+t_end = time.time() + 2
+while time.time() < t_end:
+    m = 3
+    n = 8
     x1_min = -25
     x1_max = 75
     x2_min = 5
@@ -130,6 +133,7 @@ def lab4(m, n):
             d += 1
 
     print("Значущі коефіцієнти регресії:\n", coeff_1)
+    count.append(coeff_1)
     print("Незначущі коефіцієнти регресії:\n", coeff_2)
 
     y_st = []
@@ -149,6 +153,4 @@ def lab4(m, n):
         print("Рівняння регресії адекватне при рівні значимості 0.05")
     else:
         print("Рівняння регресії неадекватне при рівні значимості 0.05")
-
-
-lab4(3, 8)
+print("Кількість значущих коефіцієнтів за 2с роботи програми: " + str(len(count)))
